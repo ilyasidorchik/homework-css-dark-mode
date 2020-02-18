@@ -1,4 +1,24 @@
-.Html {
+:root {
+	--headerBg: #663399;
+	--bg: #fff;
+	--textColor: #000;
+	--textColorInverse: #fff;
+	--link: #00f;
+	--linkHover: #ca6639;
+
+	@media (prefers-color-scheme: dark) {
+		& {
+			--bg: #000;
+			--textColor: #fff;
+			--textColorInverse: #000;
+			--link: #605bff;
+			--linkHover: #f4b145;
+		}
+	}
+}
+
+// .Html
+html {
 	box-sizing: border-box;
 	overflow-y: scroll;
 
@@ -13,10 +33,12 @@ body {
 
 	font-weight: normal;
 	font-family: georgia, serif;
-	color: hsla(0, 0%, 0%, 0.8);
-	word-wrap: break-word;
+	color: var(--textColor);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	word-wrap: break-word;
+
+	background: var(--bg);
 	-webkit-font-feature-settings: "kern", "liga", "clig", "calt";
 	-moz-font-feature-settings: "kern", "liga", "clig", "calt";
 	-ms-font-feature-settings: "kern", "liga", "clig", "calt";
@@ -80,13 +102,23 @@ template {
 }
 
 a {
+	color: var(--link);
+
 	background-color: transparent;
 	-webkit-text-decoration-skip: objects;
-}
 
-a:active,
-a:hover {
-	outline-width: 0;
+	&:visited {
+		color: var(--headerBg);
+	}
+
+	&:active,
+	&:hover {
+		outline-width: 0;
+	}
+
+	&:hover {
+		color: var(--linkHover) !important;
+	}
 }
 
 b,

@@ -1,7 +1,7 @@
 .Header {
 	margin-bottom: 1.45rem;
 
-	background: #663399;
+	background: var(--headerBg);
 
 	&-Content {
 		max-width: 960px;
@@ -14,7 +14,7 @@
 	}
 
 	&-Link {
-		color: #fff;
+		color: var(--textColorInverse) !important;
 		text-decoration: none;
 	}
 }
